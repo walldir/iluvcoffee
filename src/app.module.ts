@@ -12,11 +12,11 @@ import { ConfigModule } from '@nestjs/config';
     CoffeesModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'pass123',
-      database: 'postgres',
+      host: process.env.DATABASE_HOST,
+      port: +process.env.DATABASE_PORT,
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE,
       autoLoadEntities: true, // models will be loaded automatically (you don't have to explicitly specify the entities: [] array)
       synchronize: true, // your entities will be synced with the database (any changes you make to your entities will be reflected in the database)
     }),
