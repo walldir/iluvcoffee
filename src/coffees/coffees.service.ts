@@ -6,9 +6,9 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Flavor } from './entities/flavor.entity';
 import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto';
-import { Event } from 'src/events/entities/event.entity';
+import { Event } from '../events/entities/event.entity';
 import { ConfigService, ConfigType } from '@nestjs/config';
-import coffeesConfig from 'src/config/coffees.config';
+import coffeesConfig from '../config/coffees.config';
 
 @Injectable()
 export class CoffeesService {
