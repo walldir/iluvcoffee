@@ -6,7 +6,7 @@ import { Coffee } from './entities/coffee.entity';
 import { Flavor } from './entities/flavor.entity';
 import { COFFEE_BRANDS } from './coffees.constants';
 import { ConfigModule } from '@nestjs/config';
-import coffeesConfig from 'src/config/coffees.config';
+import coffeesConfig from '../config/coffees.config';
 
 //class MockCoffeesService {}
 
