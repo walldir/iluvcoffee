@@ -7,6 +7,7 @@ import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import appConfigs from './config/app.configs';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -31,8 +32,16 @@ import appConfigs from './config/app.configs';
       }),
     }),
     CoffeeRatingModule,
+    CommonModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    // this is a global pipe that will be applied to all requests
+    // {
+    //   provide: APP_PIPE,
+    //   useClass: ValidationPipe,
+    // },
+  ],
 })
 export class AppModule {}
